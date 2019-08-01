@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(
+    ['prefix' => 'admin', 'middleware' => ['auth']],
+    function () {
+        Route::get('/admin', function () {
+            return view('backend.index');
+        });
+        // Route::resource('kategori', 'KategoriController');
+        // Route::resource('tag', 'TagController');
+        // Route::resource('artikel', 'ArtikelController');
+    }
+);
