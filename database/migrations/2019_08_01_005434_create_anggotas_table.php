@@ -17,7 +17,7 @@ class CreateAnggotasTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama');
             $table->string('alamat');
-            $table->integer('tgl_lhr');
+            $table->date('tgl_lhr');
             $table->string('tmp_lhr');
             $table->string('j_kel');
             $table->string('status');
