@@ -28,6 +28,7 @@
                 </a> 
                 @guest
                 @else
+                @role('admin')
                 <a class="navbar-brand" href="{{ url('/admin/artikel') }}">
                     Artikel
                  </a>
@@ -37,6 +38,7 @@
                   <a class="navbar-brand" href="{{ url('/admin/tag') }}">
                     Tag
                 </a>
+                @endrole
                 @endguest
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

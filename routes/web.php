@@ -20,10 +20,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(
-    ['prefix' => 'admin', 'middleware' => ['auth']],
-    function () {
-        Route::get('/admin', function () {
-            return view('backend.index');
+    ['prefix' => 'admin', 'middleware' => ['auth','role:admin']],function() {
+
+        Route::get('/', function () {
+            return view('admin.index');
         });
         // Route::resource('kategori', 'KategoriController');
         // Route::resource('tag', 'TagController');
